@@ -1,0 +1,10 @@
+cryptography==3.3.2
+json
+datetime
+jwt
+time
+shutil
+secrets
+requests
+nsetools
+matplotlib
