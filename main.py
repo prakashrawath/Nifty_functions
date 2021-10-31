@@ -11,8 +11,8 @@ def adv_dec_print():
  adv_dec = nse.get_advances_declines()
  valid = {'NIFTY 50', 'NIFTY IT', 'NIFTY BANK'}
  for list in adv_dec:
- if list['indice'] in valid:
- print(list)
+  if list['indice'] in valid:
+   print(list)
 
 def weightage():
 
@@ -87,18 +87,18 @@ def weightage():
  weightage = 0
 
  for symbol in nse_data:
- for stock in nifty50_stocks:
- if stock['name'] == symbol['symbol']:
- scrip = symbol['symbol']
- open = symbol['open'].replace(',', '')
- ltp = symbol['ltP'].replace(',', '')
- change = float(ltp) - float(open)
- stock_weightage = float(stock['weight'])
- change_from_open += change
- individual_weightage = float(stock_weightage) * change
- weightage += individual_weightage
- # print(weightage)
- # print(scrip, open , ltp, change, individual_weightage)
+  for stock in nifty50_stocks:
+   if stock['name'] == symbol['symbol']:
+    scrip = symbol['symbol']
+    open = symbol['open'].replace(',', '')
+    ltp = symbol['ltP'].replace(',', '')
+    change = float(ltp) - float(open)
+    stock_weightage = float(stock['weight'])
+    change_from_open += change
+    individual_weightage = float(stock_weightage) * change
+    weightage += individual_weightage
+    # print(weightage)
+    # print(scrip, open , ltp, change, individual_weightage)
  print(datetime.now(), int(change_from_open), int(weightage) / 100)
  return int(weightage) / 100
 
@@ -140,5 +140,5 @@ xs = []
 ys = []
 
 # Set up plot to call animate() function periodically
-ani = animation.FuncAnimation(fig, animate, fargs=(xs, ys), interval=5000)
+ani = animation.FuncAnimation(fig, animate, fargs=(xs, ys), interval=150000)
 plt.show()
